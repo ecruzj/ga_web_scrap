@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.spec
+.dist/
+build/
+dist/
+.snapmerge_cache/
+.eggs/
+.tox/
+.venv/
+**/.DS_Store
+**/Thumbs.db
+*.log
+*.xlsx
