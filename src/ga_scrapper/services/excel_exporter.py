@@ -23,6 +23,7 @@ def export_pageviews_to_excel(
     for r in records:
         row = {
             "date": r.date.isoformat(),
+            "source": r.source, # Added Source column
             "language": r.language.upper(), # Keep the language column
             "rank": r.rank,
             "url": r.url,
@@ -42,7 +43,7 @@ def export_pageviews_to_excel(
     df = pd.DataFrame(rows)
 
     # Reorder columns for better readability
-    desired_order = ["date", "language", "rank", "url", "views"]
+    desired_order = ["date", "source", "language", "rank", "url", "views"]
     
     # Add range columns to the order if they exist
     if "range_start" in df.columns:

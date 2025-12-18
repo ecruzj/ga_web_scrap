@@ -123,7 +123,7 @@ class AnalyticsScraper:
 
         # 8. Wait for tables to refresh
         self._wait_for_tables()
-        time.sleep(3.0) # Grace period for data rendering
+        time.sleep(4.0) # Grace period for data rendering
 
     def _ensure_fixed_mode(self, dialog_root: WebElement) -> None:
         """
@@ -404,6 +404,7 @@ class AnalyticsScraper:
                             rank=rank,
                             url=url_text,
                             views=views,
+                            source="Looker Studio"
                         )
 
                         if rank > max_rank_seen:

@@ -11,3 +11,4 @@ class PageViewRecord:
     rank: int           # 1, 2, 3... according to the order in the table
     url: str            # URL displayed in the table (text of the <a>)
     views: int          # Number of views (no commas, integer)
+    source: str         # New field: "Looker Studio" or "Google Analytics"
