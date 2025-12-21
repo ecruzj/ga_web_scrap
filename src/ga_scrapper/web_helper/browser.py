@@ -12,6 +12,8 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import SessionNotCreatedException, WebDriverException
 
+from ..services.env_loader import get_env_variable_value
+
 def _get_brave_version(brave_path: str) -> str:
     """
     Returns Brave's Chromium version, e.g., '142.0.7444.60',
@@ -69,7 +71,7 @@ def make_brave_driver(download_dir: Path, brave_path: str) -> webdriver.Chrome:
 
     # 3. Persistence (User Data) settings
     # -------------------------------------------------------------------------
-    windows_user = "CruzJosu" 
+    windows_user = get_env_variable_value("USERNAME")
     user_data_path = fr"C:\Users\{windows_user}\AppData\Local\BraveSoftware\Brave-Browser\User Data"
     
     options.add_argument(f"user-data-dir={user_data_path}")
